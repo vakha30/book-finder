@@ -1,6 +1,6 @@
 # React js/ Google books API
 ## React приложение для поиска книг.
-Ссылка - https://book-finder-my.herokuapp.com/
+Ссылка - https://irzakhanov.github.io/book-finder/
 
 ![Screenshot_1](https://user-images.githubusercontent.com/47324041/131259703-70f8133b-0992-4d3f-a534-51a48c57aedd.png)
 
