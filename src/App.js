@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
 import Loader from "react-loader-spinner";
@@ -38,59 +38,67 @@ function App() {
 
   return (
     <div className="App">
-      <Route exact path="/">
-        <Header searchBooks={searchBooks} />
-        {startLoading ? (
-          isLoaded ? (
-            <div className="container">
-              <h3 className="found-books">Found {totalItems} books</h3>
-              <div className="books">
-                {items &&
-                  items.map((item, index) => (
-                    <Link
-                      className="book-card"
-                      to={`/${item.id}`}
-                      key={item.id + index}
-                    >
-                      <BookCard
-                        title={item.volumeInfo.title}
-                        category={item.volumeInfo.categories}
-                        authors={item.volumeInfo.authors}
-                        imageUrl={
-                          item.volumeInfo.imageLinks &&
-                          item.volumeInfo.imageLinks.smallThumbnail
-                        }
-                      />
-                    </Link>
-                  ))}
+      <Switch>
+        <Route exact path="/">
+          <Header searchBooks={searchBooks} />
+          {startLoading ? (
+            isLoaded ? (
+              <div className="container">
+                <h3 className="found-books">Found {totalItems} books</h3>
+                <div className="books">
+                  {items &&
+                    items.map((item, index) => (
+                      <Link
+                        className="book-card"
+                        to={`books/${item.id}`}
+                        key={item.id + index}
+                      >
+                        <BookCard
+                          title={item.volumeInfo.title}
+                          category={item.volumeInfo.categories}
+                          authors={item.volumeInfo.authors}
+                          imageUrl={
+                            item.volumeInfo.imageLinks &&
+                            item.volumeInfo.imageLinks.smallThumbnail
+                          }
+                        />
+                      </Link>
+                    ))}
+                </div>
+                <div className="load-more">
+                  {!isLoadedMore ? (
+                    <button onClick={loadMore}>Load more</button>
+                  ) : (
+                    <Loader
+                      type="ThreeDots"
+                      color="#00BFFF"
+                      height={80}
+                      width={80}
+                    />
+                  )}
+                </div>
               </div>
-              <div className="load-more">
-                {!isLoadedMore ? (
-                  <button onClick={loadMore}>Load more</button>
-                ) : (
-                  <Loader
-                    type="ThreeDots"
-                    color="#00BFFF"
-                    height={80}
-                    width={80}
-                  />
-                )}
+            ) : (
+              <div className="loader">
+                <Loader
+                  type="ThreeDots"
+                  color="#00BFFF"
+                  height={80}
+                  width={80}
+                />
               </div>
-            </div>
+            )
           ) : (
-            <div className="loader">
-              <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
+            <div className="empthy">
+              <h2>empthy</h2>
             </div>
-          )
-        ) : (
-          <div className="empthy">
-            <h2>empthy</h2>
-          </div>
-        )}
-      </Route>
-      <Route path="/:id">
-        <BookPage />
-      </Route>
+          )}
+        </Route>
+        <Route path="/books/:id">
+          <BookPage />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
     </div>
   );
 }
