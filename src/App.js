@@ -39,7 +39,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/book-finder">
           <Header searchBooks={searchBooks} />
           {startLoading ? (
             isLoaded ? (
