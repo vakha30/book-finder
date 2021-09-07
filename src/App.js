@@ -97,7 +97,7 @@ function App() {
         <Route path="/books/:id">
           <BookPage />
         </Route>
-        <Redirect to="/" />
+        <Redirect to="/book-finder" />
       </Switch>
     </div>
   );
