@@ -50,7 +50,7 @@ function App() {
                     items.map((item, index) => (
                       <Link
                         className="book-card"
-                        to={`book-finder/books/${item.id}`}
+                        to={`books/${item.id}`}
                         key={item.id + index}
                       >
                         <BookCard
@@ -97,7 +97,6 @@ function App() {
         <Route path="/book-finder/books/:id">
           <BookPage />
         </Route>
-        <Redirect to="/book-finder" />
       </Switch>
     </div>
   );
