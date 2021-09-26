@@ -205,7 +205,6 @@
 }
 
 @media screen and (max-width: 890px) {
-
   .header {
     padding: 30px 10px;
     height: 50vh;
@@ -216,34 +215,34 @@
     font-size: 26px;
     margin-bottom: 15px;
   }
-  
+
   .search-input {
     padding-bottom: 20px;
   }
-  
+
   .search-input input {
     width: 200px;
     height: 25px;
     margin-bottom: 5px;
   }
-  
+
   .search-input button {
     height: 25px;
     font-size: 16px;
   }
-  
+
   .search-block label {
     margin-right: 5px;
     display: block;
     margin-bottom: 10px;
   }
-  
+
   .search-block label span {
     color: rgb(238, 238, 238);
     font-size: 18px;
     padding-right: 10px;
   }
-  
+
   .search-block select {
     width: 100px;
     height: 25px;
