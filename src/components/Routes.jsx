@@ -7,13 +7,13 @@ function Routes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/book-finder">
           <HomePage />
         </Route>
-        <Route path="/books/:id">
+        <Route path="/book-finder/books/:id">
           <BookPage />
         </Route>
-        <Redirect to="/" />
+        <Redirect to="/book-finder" />
       </Switch>
     </BrowserRouter>
   );
