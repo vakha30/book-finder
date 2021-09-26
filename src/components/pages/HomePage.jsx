@@ -78,7 +78,7 @@ function HomePage() {
             items.map((item, index) => (
               <Link
                 className="book-card"
-                to={`book-finder/books/${item.id}`}
+                to={`/book-finder/books/${item.id}`}
                 key={item.id + index}
               >
                 <BookCard
