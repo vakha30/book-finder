@@ -11,6 +11,7 @@
     "proptypes": "^1.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
     "react-loader-spinner": "^4.0.0",
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
@@ -33,6 +34,9 @@
       "react-app/jest"
     ]
   },
+  "prettier": {
+    "singleQuote": true
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -44,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "^2.4.1"
   }
 }

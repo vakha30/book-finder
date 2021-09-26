@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:burlywood;
+  background-color: burlywood;
 }
 
 code {
@@ -32,7 +32,8 @@ a {
   font-size: inherit;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
